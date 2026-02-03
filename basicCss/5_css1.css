@@ -1,81 +1,74 @@
-/* 1. Page background and base styles */
+/* Page background */
 body {
-    background-color: #add8e6; /* Closely matches the light blue background */
+    background-color: #add8e6; 
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
-    color: #000;
 }
 
-/* 2. Header sizes and alignment */
+/* Main header */
 h1 {
     text-align: center;
     font-size: 48px;
-    margin-bottom: 20px;
 }
 
+/* Section headers */
 h2 {
     font-size: 28px;
-    margin-top: 30px;
 }
 
 h3 {
     font-size: 22px;
 }
 
-/* 3. Paragraph defaults */
+/* Paragraphs */
 p {
     line-height: 1.4;
     margin-bottom: 15px;
 }
 
-/* 4. The 2nd Paragraph (The Green Box) */
+/* Second paragraph - Updated to align left */
 #paragraph2 {
     width: 60%;
-    margin: 20px auto;
+    margin: 20px 0; /* Changed from 'auto' to '0' to align left */
     padding: 20px;
-    border: 3px solid #008000; /* Dark green border */
-    background-color: #ffffff; /* White background */
+    border: 3px solid #008000;
+    background-color: #ffffff;
     line-height: 1.8;
 }
 
-/* 5. The 4th and 5th paragraphs (Blue bars) */
+/* 4th and 5th paragraphs */
 .blue {
-    background-color: #000080; /* Dark navy blue */
-    color: #ffffff; /* White text */
+    background-color: #000080;
+    color: #ffffff;
     padding: 15px;
     margin-bottom: 10px;
 }
 
-/* 6. List styling (Two digits) */
+/* Ordered list - Two digits */
 ol {
     list-style-type: decimal-leading-zero;
-    padding-left: 40px;
 }
 
-/* 7. Link Colors (Transition from Blue to Purple) */
+/* List links - Blue to Purple logic */
 ol a:link {
-    color: #0000FF; /* Standard blue for unvisited */
+    color: #0000FF; /* Blue when unclicked */
     text-decoration: underline;
 }
 
 ol a:visited {
-    color: #800080; /* Standard purple for visited */
+    color: #800080; /* Purple after clicking */
 }
 
-/* 8. W3Schools link (Unique color/weight) */
+/* W3Schools link - Distinct color and bold */
 a[href*="w3schools"] {
-    color: #a52a2a; /* Brownish-red as seen in image */
+    color: #a52a2a;
     font-weight: bold;
     text-decoration: none;
 }
 
-a[href*="w3schools"]:hover {
-    text-decoration: underline;
-}
-
-/* 9. Table styling (Overlapping borders) */
+/* Table styling */
 table {
-    border-collapse: collapse; /* Makes borders overlap into single lines */
+    border-collapse: collapse; /* Borders overlap */
     width: 100%;
     margin-top: 20px;
 }
@@ -85,13 +78,13 @@ table, th, td {
 }
 
 th {
-    background-color: #444444; /* Darker header background */
+    background-color: #444444; /* Dark background */
     color: #ffffff;
     padding: 10px;
     text-align: left;
 }
 
 td {
-    background-color: #d3d3d3; /* Light grey cell background */
+    background-color: #d3d3d3; /* Different cell background */
     padding: 10px;
 }
