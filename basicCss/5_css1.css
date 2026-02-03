@@ -1,19 +1,18 @@
-/* Page background */
+/* 1. Page background and base styles */
 body {
-    /* Adjusted to a slightly more saturated sky blue seen in the image */
-    background-color: #add8e6; 
+    background-color: #add8e6; /* Closely matches the light blue background */
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
+    color: #000;
 }
 
-/* Main header */
+/* 2. Header sizes and alignment */
 h1 {
     text-align: center;
     font-size: 48px;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-/* Section headers */
 h2 {
     font-size: 28px;
     margin-top: 30px;
@@ -23,82 +22,76 @@ h3 {
     font-size: 22px;
 }
 
-/* Paragraphs */
+/* 3. Paragraph defaults */
 p {
-    line-height: 1.4; /* Slightly tighter than 1.6 to match image */
+    line-height: 1.4;
     margin-bottom: 15px;
 }
 
-/* Second paragraph - The Green Box */
+/* 4. The 2nd Paragraph (The Green Box) */
 #paragraph2 {
     width: 60%;
     margin: 20px auto;
-    padding: 25px; /* Increased padding to match the visual whitespace */
-    border: 4px solid #008000; /* Slightly thicker green border */
-    background-color: white;
+    padding: 20px;
+    border: 3px solid #008000; /* Dark green border */
+    background-color: #ffffff; /* White background */
     line-height: 1.8;
 }
 
-/* 4th and 5th paragraphs */
+/* 5. The 4th and 5th paragraphs (Blue bars) */
 .blue {
-    /* Set to the specific Navy/Midnight blue from the image */
-    background-color: #000080; 
-    color: white;
+    background-color: #000080; /* Dark navy blue */
+    color: #ffffff; /* White text */
     padding: 15px;
-    margin-bottom: 10px; /* Reduced gap between the two blue bars */
+    margin-bottom: 10px;
 }
 
-/* Ordered list */
+/* 6. List styling (Two digits) */
 ol {
-    /* Ensures 01, 02 format */
     list-style-type: decimal-leading-zero;
     padding-left: 40px;
 }
 
-/* List links */
-ol a {
-    color: #0000ee; /* Standard blue link color seen in image */
+/* 7. Link Colors (Transition from Blue to Purple) */
+ol a:link {
+    color: #0000FF; /* Standard blue for unvisited */
     text-decoration: underline;
 }
 
-ol a:hover {
-    text-decoration: none;
+ol a:visited {
+    color: #800080; /* Standard purple for visited */
 }
 
-/* Visited links */
-a:visited {
-    color: #551a8b; /* Standard purple visited color */
-}
-
-/* W3Schools link - Distinct color and bold */
+/* 8. W3Schools link (Unique color/weight) */
 a[href*="w3schools"] {
-    color: #a52a2a; /* Brownish-red color as seen in the bottom link */
+    color: #a52a2a; /* Brownish-red as seen in image */
     font-weight: bold;
     text-decoration: none;
 }
 
-/* Table styling */
+a[href*="w3schools"]:hover {
+    text-decoration: underline;
+}
+
+/* 9. Table styling (Overlapping borders) */
 table {
-    border-collapse: collapse; /* Essential for overlapping/single borders */
-    width: 100%; /* Image shows it stretching across the container */
+    border-collapse: collapse; /* Makes borders overlap into single lines */
+    width: 100%;
     margin-top: 20px;
 }
 
-/* The table border applies to all cells and overlaps */
 table, th, td {
     border: 1px solid #000000;
 }
 
-/* Table header - Dark background */
 th {
-    background-color: #444444;
-    color: white;
-    padding: 8px;
+    background-color: #444444; /* Darker header background */
+    color: #ffffff;
+    padding: 10px;
     text-align: left;
 }
 
-/* Table cells - Light grey background */
 td {
-    background-color: #d3d3d3;
-    padding: 8px;
+    background-color: #d3d3d3; /* Light grey cell background */
+    padding: 10px;
 }
