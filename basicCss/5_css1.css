@@ -1,14 +1,17 @@
+/* Page background */
 body {
-    background-color: #f2f2f2;
+    background-color: #dbeeff; /* light blue */
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
 }
 
+/* Main header */
 h1 {
     text-align: center;
     font-size: 48px;
 }
 
+/* Section headers */
 h2 {
     font-size: 28px;
 }
@@ -17,42 +20,60 @@ h3 {
     font-size: 22px;
 }
 
+/* Paragraphs */
 p {
     line-height: 1.6;
+    margin-bottom: 15px;
 }
 
+/* Second paragraph */
 #paragraph2 {
     width: 60%;
     margin: 20px auto;
     padding: 15px;
-    border: 2px solid #555;
-    background-color: #ffffff;
+    border: 3px solid green;
+    background-color: white;
     line-height: 1.8;
 }
 
+/* 4th and 5th paragraphs */
 .blue {
-    color: #1e4ed8;
-    background-color: #e8f0ff;
-    padding: 10px;
+    background-color: #0a2f6b; /* dark blue */
+    color: white;
+    padding: 12px;
 }
 
+/* Ordered list */
 ol {
     list-style-type: decimal-leading-zero;
 }
 
+/* List links */
 ol a {
-    color: #7a1fa2;
+    color: #5a2a82;
     text-decoration: none;
 }
 
+ol a:hover {
+    text-decoration: underline;
+}
+
+/* Visited links */
+a:visited {
+    color: #8b0000; /* dark red */
+}
+
+/* W3Schools link */
 a[href*="w3schools"] {
-    color: #006600;
+    color: #006400;
     font-weight: bold;
 }
 
+/* Table styling */
 table {
     border-collapse: collapse;
     width: 80%;
+    margin-top: 20px;
 }
 
 table, th, td {
@@ -60,12 +81,12 @@ table, th, td {
 }
 
 th {
-    background-color: #444;
+    background-color: #333;
     color: white;
     padding: 10px;
 }
 
 td {
-    background-color: #dddddd;
+    background-color: #e0e0e0;
     padding: 10px;
 }
