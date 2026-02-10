@@ -1,69 +1,41 @@
-/* ---------- GENERAL ---------- */
+/* ---------- PAGE BASICS ---------- */
 body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ---------- FIRST LETTER STYLING ---------- */
-/* Only the first paragraph of each article */
-article > p:first-of-type::first-letter {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 36px;
-    float: left;
-    line-height: 1;
-    padding-right: 6px;
-}
-
-/* ---------- GOOGLE LINKS ARROW ---------- */
-a[href*="google.com"]::after {
-    content: url("arrow.png");
-    margin-left: 6px;
-    vertical-align: middle;
-}
-
-/* ---------- ARTICLE TRANSITIONS ---------- */
-article {
-    color: #999;
-    max-height: 140px;
-    overflow: hidden;
-    transition: color 2s ease, max-height 2s ease;
-    margin-bottom: 20px;
-}
-
-article:hover {
-    color: #333;
-    max-height: 800px;
-}
-
-/* ---------- NAVIGATION ---------- */
+/* ---------- NAV BAR (LEFT SIDE) ---------- */
 nav {
-    background-color: #ddd;
-    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 100%;
+    background-color: black;
+    padding-top: 10px;
 }
 
 nav button {
-    background-color: #eee;
+    width: 100%;
+    background-color: #0047ff;
+    color: white;
     border: none;
-    padding: 10px 15px;
-    margin-right: 5px;
+    padding: 10px;
     cursor: pointer;
+    text-align: left;
 }
 
 nav button:hover {
-    background-color: #bbb;
+    background-color: #002db3;
 }
 
 /* ---------- JUMP MENU ---------- */
 #jumpMenu {
+    display: none;
     list-style: none;
     padding: 0;
     margin: 0;
-    display: none;
-    position: absolute;
-    background-color: #eee;
-}
-
-#menuItems {
-    position: relative;
+    background-color: #f2b705;
 }
 
 #recentArticles:hover + #jumpMenu,
@@ -73,12 +45,71 @@ nav button:hover {
 
 #jumpMenu li a {
     display: block;
-    padding: 8px 12px;
+    padding: 6px 10px;
+    color: black;
     text-decoration: none;
-    color: #333;
 }
 
 #jumpMenu li a:hover {
-    background-color: #444;
-    color: #fff;
+    background-color: #0047ff;
+    color: white;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+main {
+    margin-left: 180px;
+}
+
+/* ---------- RED HEADER ---------- */
+header {
+    background-color: red;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* ---------- ARTICLE GRID ---------- */
+#container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+/* ---------- ARTICLE TRANSITIONS ---------- */
+article {
+    color: #aaa;
+    max-height: 150px;
+    overflow: hidden;
+    transition: color 2s ease, max-height 2s ease;
+}
+
+article:hover {
+    color: #000;
+    max-height: 1000px;
+}
+
+/* ---------- FIRST LETTER ---------- */
+article > p:first-of-type::first-letter {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 36px;
+    float: left;
+    padding-right: 6px;
+}
+
+/* ---------- GOOGLE LINK ARROW ---------- */
+a[href*="google.com"]::after {
+    content: url("arrow.png");
+    margin-left: 6px;
+}
+
+/* ---------- THANK YOU LINK ---------- */
+#thanks a {
+    display: inline-block;
+    margin: 20px;
+    padding: 8px 12px;
+    border: 2px solid #6fa8dc;
+    background-color: #cfe2f3;
+    color: blue;
 }
