@@ -1,4 +1,36 @@
-/* 1. First letter styling for article text */
+/* Layout: Creating the Sidebar and Main Area */
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav#menuItems {
+    width: 200px;
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Header Styling */
+header {
+    background-color: red;
+    padding: 20px;
+    text-align: center;
+}
+
+header p {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 1. First letter: Times New Roman, 36px */
 article p:first-of-type::first-letter {
     font-family: "Times New Roman", Times, serif;
     font-size: 36px;
@@ -7,63 +39,85 @@ article p:first-of-type::first-letter {
     line-height: 1;
 }
 
-/* 2. Google links with external arrow icon */
-#container article a[href*="google.com"]::after {
+/* 2. Read More links with Wikipedia Arrow */
+a[href*="google.com"]::after {
     content: "";
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin-left: 5px;
-    vertical-align: middle;
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-/* 3 & 4. Article hover: Light to dark and expansion over 2 seconds */
+/* 3 & 4. Article Transitions: Light to Dark & Expand */
+#container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Matching the 4-column layout */
+    gap: 20px;
+    padding: 20px;
+}
+
 article {
-    color: #cccccc; /* Lightly-colored text */
-    transition: color 2s, transform 2s, padding 2s;
+    color: #b0b0b0; /* Lightly-colored text */
+    transition: color 2s, transform 2s;
     transform: scale(1);
 }
 
 article:hover {
     color: #000000; /* Darker text */
-    transform: scale(1.05); /* Expands the article slightly */
-    z-index: 10;
+    transform: scale(1.1); /* Expands the article */
 }
 
-/* 5. Navigation button hover effect */
+/* 5. Navigation Button Hover */
+nav button {
+    background-color: blue;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
 nav button:hover {
-    background-color: gold; /* Matches the visual in the screenshot */
-    cursor: pointer;
+    background-color: gold; /* Background changes on hover */
+    color: blue;
 }
 
-/* 6. Show jump menu when hovering over Recent Articles button */
+/* 6. Recent Articles Jump Menu Visibility */
 #jumpMenu {
-    display: none;
+    display: none; /* Hidden by default */
     list-style: none;
     padding: 0;
     margin: 0;
+    background-color: gold;
 }
 
-/* Using adjacent sibling or container hover logic to show the menu */
-nav:hover #jumpMenu, 
-#recentArticles:hover + #jumpMenu,
-#jumpMenu:hover {
-    display: block;
+#menuItems:hover #jumpMenu,
+#recentArticles:hover + #jumpMenu {
+    display: block; /* Appears when hovering Recent Articles */
 }
 
-/* 7. Jump menu link hover: change font and background color */
+/* 7. Jump Menu Link Hover */
 #jumpMenu li a {
     display: block;
-    text-decoration: none;
     color: blue;
-    background-color: gold;
-    padding: 2px 10px;
+    text-decoration: none;
+    padding: 5px 20px;
 }
 
 #jumpMenu li a:hover {
-    color: white;
-    background-color: blue;
+    background-color: blue; /* Background color change */
+    color: white; /* Font color change */
+}
+
+/* Additional styling for the "Thank you" box */
+#thanks {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid blue;
+    width: fit-content;
+    margin: 20px auto;
 }
