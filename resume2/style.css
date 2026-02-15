@@ -1,65 +1,73 @@
-/* --- Base Mobile Styles (Target: 412px) --- */
+/* --- GLOBAL STYLES --- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f9;
+    background-color: #f0f2f5;
     margin: 0;
-    padding: 15px;
+    padding: 10px;
 }
 
 .container {
-    max-width: 100%;
     background: white;
+    max-width: 100%;
+    margin: 0 auto;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 header {
     text-align: center;
-    border-bottom: 3px solid #00529b; /* UCF Blue */
-    padding-bottom: 10px;
+    border-bottom: 4px solid #ba9b37; /* UCF Gold */
+    padding-bottom: 15px;
     margin-bottom: 20px;
 }
 
-h1 { margin: 0; color: #00529b; }
-h2 { 
-    color: #00529b; 
-    border-bottom: 1px solid #ddd;
-    text-transform: uppercase;
-    font-size: 1.2rem;
+h1 { color: #000; margin: 0; }
+h2 { color: #ba9b37; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: #000;
+    padding: 10px;
+    border-radius: 4px;
 }
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+nav a.active { color: #ba9b37; }
 
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
-    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-.project-card {
-    background: #f9f9f9;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-left: 5px solid #ffca28; /* UCF Gold */
+/* --- MOBILE LAYOUT (412px) --- */
+/* Elements naturally stack vertically here */
+.resume-grid {
+    display: flex;
+    flex-direction: column;
 }
 
-footer {
-    text-align: center;
-    font-size: 0.8rem;
-    margin-top: 20px;
-    color: #777;
-}
-
-/* --- Desktop Layout (Target: 1920px) --- */
-@media (min-width: 1024px) {
+/* --- DESKTOP LAYOUT (1920px) --- */
+@media screen and (min-width: 1024px) {
     body {
-        padding: 50px;
+        padding: 60px;
     }
 
     .container {
-        max-width: 1200px; /* Comfortable reading width on 1920px screen */
-        margin: 0 auto;
+        max-width: 1200px; /* Limits width on ultra-wide 1920px screens */
         padding: 50px;
     }
 
@@ -70,20 +78,24 @@ footer {
         text-align: left;
     }
 
-    /* Create a two-column grid for the main content */
-    .main-grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 40px;
+    /* Side-by-side layout for Resume */
+    .resume-grid {
+        flex-direction: row;
+        gap: 50px;
     }
 
-    .project-card {
-        display: flex;
-        gap: 20px;
-        align-items: center;
+    .main-content { flex: 2; }
+    .sidebar { 
+        flex: 1; 
+        background: #fafafa; 
+        padding: 20px; 
+        border-radius: 8px;
     }
 
-    .project-card img {
-        width: 150px; /* Fixed size for desktop thumbnails */
+    /* Project Page Image Handling */
+    figure {
+        float: right;
+        width: 400px;
+        margin-left: 30px;
     }
 }
