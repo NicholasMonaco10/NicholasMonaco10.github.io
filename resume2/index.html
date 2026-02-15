@@ -11,71 +11,59 @@
 <div class="container">
     <header>
         <h1>Nicholas Monaco</h1>
-        <address>
-            Lake Worth, FL 33467<br>
-            <span class="contact-info">
-                nmonaco@email.com | (555) 000-0000<br>
-                linkedin.com/in/nmonaco | github.com/nmonaco
-            </span>
-        </address>
+        <p class="contact-info">
+            <a href="mailto:nmonaco@knights.ucf.edu">nmonaco@knights.ucf.edu</a> | 
+            <a href="https://www.linkedin.com/in/nicholasmonaco">LinkedIn Profile</a>
+        </p>
     </header>
 
+    <nav>
+        <a href="index.html" class="active">Resume Home</a>
+        <a href="hill-cipher.html">Hill Cipher Project</a>
+        <a href="college-invoice.html">Invoice Project</a>
+    </nav>
+
     <main>
-        <section class="objective">
+        <section>
             <h2>Professional Objective</h2>
             <p>Information Technology student seeking opportunities to apply programming, cybersecurity, and system administration skills in real-world environments.</p>
         </section>
 
-        <div class="main-grid">
-            <div class="left-col">
+        <div class="resume-grid">
+            <div class="main-content">
                 <section>
                     <h2>Education</h2>
-                    <p>
-                        <strong>University of Central Florida</strong><br>
-                        Bachelor of Science in Information Technology<br>
-                        <span class="date">Aug 2022 – May 2026</span>
-                    </p>
-                    <p>
-                        <strong>Relevant Coursework:</strong><br>
-                        Intro to C, Data Structures, Security in Computing, OOP, Operating Systems.
-                    </p>
+                    <p><strong>University of Central Florida</strong><br>
+                    Bachelor of Science in Information Technology<br>
+                    Aug 2022 – May 2026</p>
+                    <p><strong>Relevant Coursework:</strong> Intro to C, Data Structures, Security in Computing, OOP, Operating Systems.</p>
                 </section>
 
                 <section>
-                    <h2>Technical Skills</h2>
+                    <h2>Projects</h2>
                     <ul>
-                        <li><strong>Languages:</strong> C, C++, Python, Java, SQL</li>
-                        <li><strong>Tools:</strong> Git, GitHub, Wireshark, Power BI, VirtualBox</li>
-                        <li><strong>Other:</strong> macOS, Windows, Hardware Repair, PowerShell</li>
+                        <li><a href="hill-cipher.html"><strong>Hill Cipher Encryption (C)</strong></a> - A command-line encryption tool using matrix math.</li>
+                        <li><a href="college-invoice.html"><strong>College Invoice Program (Java)</strong></a> - An automated student billing and fee tracking system.</li>
                     </ul>
                 </section>
             </div>
 
-            <div class="right-col">
+            <aside class="sidebar">
                 <section>
-                    <h2>Projects</h2>
-                    <article class="project-card">
-                        <h3>Hill Cipher Encryption</h3>
-                        <p class="tag">Language: C</p>
-                        <img src="images/hill-cipher.png" alt="Hill Cipher project">
-                        <p>Command-line program that encrypts messages using matrix-based cryptography.</p>
-                    </article>
-
-                    <article class="project-card">
-                        <h3>College Invoice Program</h3>
-                        <p class="tag">Language: Java</p>
-                        <img src="images/college-invoice.png" alt="Invoice program">
-                        <p>Java application tracking student IDs and fees using File I/O.</p>
-                    </article>
+                    <h2>Technical Skills</h2>
+                    <ul>
+                        <li><strong>Languages:</strong> C, C++, Python, Java, SQL</li>
+                        <li><strong>Tools:</strong> Git, GitHub, Wireshark, Power BI</li>
+                        <li><strong>Systems:</strong> macOS, Windows, PowerShell</li>
+                    </ul>
                 </section>
-            </div>
-        </div>
 
-        <section>
-            <h2>Extracurricular & Awards</h2>
-            <p><strong>Hack@UCF Club</strong> (2023–Present)</p>
-            <p>AICE and AP Scholar Awards (2021)</p>
-        </section>
+                <section>
+                    <h2>Honors</h2>
+                    <p>AICE and AP Scholar Awards (2021)</p>
+                </section>
+            </aside>
+        </div>
     </main>
 
     <footer>
