@@ -2,89 +2,6 @@
 <html lang="en">
 	<head>
 		<title>Basic JavaScript Exercises</title>
-		<script>
-            // 1pt: Simple Functions - Increment and Decrement
-            function tickUp() {
-                const counterElement = document.getElementById('counter');
-                let currentVal = parseInt(counterElement.innerText);
-                counterElement.innerText = currentVal + 1;
-            }
-
-            function tickDown() {
-                const counterElement = document.getElementById('counter');
-                let currentVal = parseInt(counterElement.innerText);
-                counterElement.innerText = currentVal - 1;
-            }
-
-            // 1pt: Simple For Loop - Display 0 to Counter
-            function runForLoop() {
-                const count = parseInt(document.getElementById('counter').innerText);
-                const resultArea = document.getElementById('forLoopResult');
-                let output = "";
-                for (let i = 0; i <= count; i++) {
-                    output += i + " ";
-                }
-                resultArea.innerText = output.trim();
-            }
-
-            // 1pt: Repetition with Condition - Odd Numbers
-            function showOddNumbers() {
-                const count = parseInt(document.getElementById('counter').innerText);
-                const resultArea = document.getElementById('oddNumberResult');
-                let output = "";
-                for (let i = 1; i <= count; i++) {
-                    if (i % 2 !== 0) {
-                        output += i + " ";
-                    }
-                }
-                resultArea.innerText = output.trim();
-            }
-
-            // 1pt: Arrays - Multiples of 5 in Reverse
-            function addMultiplesToArray() {
-                const count = parseInt(document.getElementById('counter').innerText);
-                let multiples = [];
-                // If count is < 5, loop won't run, printing empty array
-                for (let i = count; i >= 5; i--) {
-                    if (i % 5 === 0) {
-                        multiples.push(i);
-                    }
-                }
-                console.log(multiples);
-            }
-
-            // 2pts: Objects and Form Fields - Print Object to Console
-            function printCarObject() {
-                const car = {
-                    cType: document.getElementById('carType').value,
-                    cMPG: document.getElementById('carMPG').value,
-                    cColor: document.getElementById('carColor').value
-                };
-                console.log(car);
-            }
-
-            // 2pts: Objects and Form Fields pt. 2 - Load Footer Data
-            function loadCar(num) {
-                let carData;
-                if (num === 1) carData = carObject1;
-                else if (num === 2) carData = carObject2;
-                else if (num === 3) carData = carObject3;
-
-                if (carData) {
-                    document.getElementById('carType').value = carData.cType;
-                    document.getElementById('carMPG').value = carData.cMPG;
-                    document.getElementById('carColor').value = carData.cColor;
-                }
-            }
-
-            // 2pt: Changing Styles - Change Paragraph Color
-            function changeColor(choice) {
-                const para = document.getElementById('styleParagraph');
-                if (choice === 1) para.style.color = "red";
-                else if (choice === 2) para.style.color = "green";
-                else if (choice === 3) para.style.color = "blue";
-            }
-		</script>
 	</head>
 	
 	<body>
@@ -165,5 +82,69 @@
 				let carObject3 = {cType: "van", cMPG: "30", cColor: "green"};
 			</script>
 		</footer>
+
+		<script>
+			// Helper to get current counter value
+			function getCounter() {
+				return parseInt(document.getElementById('counter').innerText);
+			}
+
+			function tickUp() {
+				document.getElementById('counter').innerText = getCounter() + 1;
+			}
+
+			function tickDown() {
+				document.getElementById('counter').innerText = getCounter() - 1;
+			}
+
+			function runForLoop() {
+				let limit = getCounter();
+				let output = "";
+				for (let i = 0; i <= limit; i++) {
+					output += i + " ";
+				}
+				document.getElementById('forLoopResult').innerText = output.trim();
+			}
+
+			function showOddNumbers() {
+				let limit = getCounter();
+				let output = "";
+				for (let i = 1; i <= limit; i++) {
+					if (i % 2 !== 0) output += i + " ";
+				}
+				document.getElementById('oddNumberResult').innerText = output.trim();
+			}
+
+			function addMultiplesToArray() {
+				let limit = getCounter();
+				let multiples = [];
+				// Loop backwards from the counter
+				for (let i = limit; i >= 5; i--) {
+					if (i % 5 === 0) multiples.push(i);
+				}
+				console.log(multiples);
+			}
+
+			function printCarObject() {
+				let car = {
+					cType: document.getElementById('carType').value,
+					cMPG: document.getElementById('carMPG').value,
+					cColor: document.getElementById('carColor').value
+				};
+				console.log(car);
+			}
+
+			function loadCar(num) {
+				let data = (num === 1) ? carObject1 : (num === 2) ? carObject2 : carObject3;
+				document.getElementById('carType').value = data.cType;
+				document.getElementById('carMPG').value = data.cMPG;
+				document.getElementById('carColor').value = data.cColor;
+			}
+
+			function changeColor(num) {
+				let colors = {1: "red", 2: "green", 3: "blue"};
+				document.getElementById('styleParagraph').style.color = colors[num];
+			}
+		</script>
 	</body>
 </html>
