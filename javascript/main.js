@@ -1,80 +1,85 @@
-// Helper to get the current counter value as an integer
-function getCounterValue() {
-    return parseInt(document.getElementById('counter').innerText);
-}
-
-// 1. Simple Functions: Increase/Decrease Counter
+// 1pt: Simple Functions - Increment and Decrement
 function tickUp() {
-    let count = getCounterValue();
-    document.getElementById('counter').innerText = count + 1;
+    const counterElement = document.getElementById('counter'); //
+    let currentVal = parseInt(counterElement.innerText);
+    counterElement.innerText = currentVal + 1;
 }
 
 function tickDown() {
-    let count = getCounterValue();
-    document.getElementById('counter').innerText = count - 1;
+    const counterElement = document.getElementById('counter'); //
+    let currentVal = parseInt(counterElement.innerText);
+    counterElement.innerText = currentVal - 1;
 }
 
-// 2. Simple For Loop: Display 0 to Counter
+// 1pt: Simple For Loop - Display 0 to Counter
 function runForLoop() {
-    let count = getCounterValue();
-    let result = "";
+    const count = parseInt(document.getElementById('counter').innerText);
+    const resultArea = document.getElementById('forLoopResult'); //
+    let output = "";
+    
     for (let i = 0; i <= count; i++) {
-        result += i + " ";
+        output += i + " ";
     }
-    document.getElementById('forLoopResult').innerText = result.trim();
+    resultArea.innerText = output.trim();
 }
 
-// 3. Repetition with Condition: Odd Numbers 1 to Counter
+// 1pt: Repetition with Condition - Odd Numbers
 function showOddNumbers() {
-    let count = getCounterValue();
-    let result = "";
+    const count = parseInt(document.getElementById('counter').innerText);
+    const resultArea = document.getElementById('oddNumberResult'); //
+    let output = "";
+    
     for (let i = 1; i <= count; i++) {
         if (i % 2 !== 0) {
-            result += i + " ";
+            output += i + " ";
         }
     }
-    document.getElementById('oddNumberResult').innerText = result.trim();
+    resultArea.innerText = output.trim();
 }
 
-// 4. Arrays: Multiples of 5 in Reverse Order
+// 1pt: Arrays - Multiples of 5 in Reverse
 function addMultiplesToArray() {
-    let count = getCounterValue();
+    const count = parseInt(document.getElementById('counter').innerText);
     let multiples = [];
-    // Start from the largest multiple of 5 less than or equal to count
+    
+    // Start from the count and move down to 5
     for (let i = count; i >= 5; i--) {
         if (i % 5 === 0) {
             multiples.push(i);
         }
     }
-    console.log(multiples);
+    console.log(multiples); // Requirement: print the array itself
 }
 
-// 5. Objects and Form Fields: Print current form data
+// 2pts: Objects and Form Fields - Print Object
 function printCarObject() {
-    let car = {
-        cType: document.getElementById('carType').value,
+    const car = {
+        cType: document.getElementById('carType').value, //
         cMPG: document.getElementById('carMPG').value,
         cColor: document.getElementById('carColor').value
     };
     console.log(car);
 }
 
-// 6. Objects and Form Fields pt. 2: Load data from footer objects
-function loadCar(carNum) {
-    let selectedCar;
-    if (carNum === 1) selectedCar = carObject1;
-    if (carNum === 2) selectedCar = carObject2;
-    if (carNum === 3) selectedCar = carObject3;
+// 2pts: Objects and Form Fields pt. 2 - Load Footer Data
+function loadCar(num) {
+    let carData;
+    // Accesses variables defined in the HTML footer
+    if (num === 1) carData = carObject1;
+    else if (num === 2) carData = carObject2;
+    else if (num === 3) carData = carObject3;
 
-    document.getElementById('carType').value = selectedCar.cType;
-    document.getElementById('carMPG').value = selectedCar.cMPG;
-    document.getElementById('carColor').value = selectedCar.cColor;
+    if (carData) {
+        document.getElementById('carType').value = carData.cType;
+        document.getElementById('carMPG').value = carData.cMPG;
+        document.getElementById('carColor').value = carData.cColor;
+    }
 }
 
-// 7. Changing Styles: Change text color of specific paragraph
+// 2pt: Changing Styles - Change Paragraph Color
 function changeColor(choice) {
-    let para = document.getElementById('styleParagraph');
+    const para = document.getElementById('styleParagraph'); //
     if (choice === 1) para.style.color = "red";
-    if (choice === 2) para.style.color = "green";
-    if (choice === 3) para.style.color = "blue";
+    else if (choice === 2) para.style.color = "green";
+    else if (choice === 3) para.style.color = "blue";
 }
