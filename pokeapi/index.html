@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Team Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h3>Name or ID</h3>
+        <div class="search-box">
+            <input type="text" id="pokemonInput" placeholder="e.g. snorlax or 143">
+            <button id="findBtn">Find</button>
+        </div>
+
+        <div id="displayArea">
+            <img id="pokeImage" src="" alt="" style="display:none; width: 150px;">
+            <audio id="pokeAudio" controls style="display:none;"></audio>
+            
+            <div class="moves-container">
+                <select id="move1" class="move-select"></select>
+                <select id="move2" class="move-select"></select>
+                <select id="move3" class="move-select"></select>
+                <select id="move4" class="move-select"></select>
+            </div>
+            
+            <button id="addToTeamBtn" style="display:none;">Add to Team</button>
+        </div>
+
+        <div id="teamList">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
